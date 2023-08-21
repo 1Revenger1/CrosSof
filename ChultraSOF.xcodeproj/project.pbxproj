@@ -9,6 +9,13 @@
 /* Begin PBXBuildFile section */
 		EE8DA0B62A93F79900C92EF1 /* ChultraSOF.hpp in Headers */ = {isa = PBXBuildFile; fileRef = EE8DA0B52A93F79900C92EF1 /* ChultraSOF.hpp */; };
 		EE8DA0B82A93F79900C92EF1 /* ChultraSOF.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE8DA0B72A93F79900C92EF1 /* ChultraSOF.cpp */; };
+		EE8DA0C22A93F8DB00C92EF1 /* libkmod.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EE8DA0C12A93F8DB00C92EF1 /* libkmod.a */; };
+		EE8DA0C62A93FEBA00C92EF1 /* ChultraSofHda.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE8DA0C42A93FEBA00C92EF1 /* ChultraSofHda.cpp */; };
+		EE8DA0C72A93FEBA00C92EF1 /* ChultraSofHda.hpp in Headers */ = {isa = PBXBuildFile; fileRef = EE8DA0C52A93FEBA00C92EF1 /* ChultraSofHda.hpp */; };
+		EE8DA0CA2A94023900C92EF1 /* ChultraSofCml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE8DA0C82A94023900C92EF1 /* ChultraSofCml.cpp */; };
+		EE8DA0CB2A94023900C92EF1 /* ChultraSofCml.hpp in Headers */ = {isa = PBXBuildFile; fileRef = EE8DA0C92A94023900C92EF1 /* ChultraSofCml.hpp */; };
+		EE8DA0CE2A940A5A00C92EF1 /* Max98357a.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE8DA0CC2A940A5A00C92EF1 /* Max98357a.cpp */; };
+		EE8DA0CF2A940A5A00C92EF1 /* Max98357a.hpp in Headers */ = {isa = PBXBuildFile; fileRef = EE8DA0CD2A940A5A00C92EF1 /* Max98357a.hpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -16,6 +23,13 @@
 		EE8DA0B52A93F79900C92EF1 /* ChultraSOF.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ChultraSOF.hpp; sourceTree = "<group>"; };
 		EE8DA0B72A93F79900C92EF1 /* ChultraSOF.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ChultraSOF.cpp; sourceTree = "<group>"; };
 		EE8DA0B92A93F79900C92EF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EE8DA0C12A93F8DB00C92EF1 /* libkmod.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libkmod.a; path = usr/lib/libkmod.a; sourceTree = SDKROOT; };
+		EE8DA0C42A93FEBA00C92EF1 /* ChultraSofHda.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ChultraSofHda.cpp; sourceTree = "<group>"; };
+		EE8DA0C52A93FEBA00C92EF1 /* ChultraSofHda.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ChultraSofHda.hpp; sourceTree = "<group>"; };
+		EE8DA0C82A94023900C92EF1 /* ChultraSofCml.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ChultraSofCml.cpp; sourceTree = "<group>"; };
+		EE8DA0C92A94023900C92EF1 /* ChultraSofCml.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ChultraSofCml.hpp; sourceTree = "<group>"; };
+		EE8DA0CC2A940A5A00C92EF1 /* Max98357a.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Max98357a.cpp; sourceTree = "<group>"; };
+		EE8DA0CD2A940A5A00C92EF1 /* Max98357a.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Max98357a.hpp; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -23,6 +37,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE8DA0C22A93F8DB00C92EF1 /* libkmod.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -34,6 +49,7 @@
 			children = (
 				EE8DA0B42A93F79900C92EF1 /* ChultraSOF */,
 				EE8DA0B32A93F79900C92EF1 /* Products */,
+				EE8DA0C02A93F8DB00C92EF1 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -48,11 +64,41 @@
 		EE8DA0B42A93F79900C92EF1 /* ChultraSOF */ = {
 			isa = PBXGroup;
 			children = (
+				EE8DA0C32A93FC2D00C92EF1 /* Intel */,
+				EE8DA0BF2A93F86300C92EF1 /* Codecs */,
 				EE8DA0B52A93F79900C92EF1 /* ChultraSOF.hpp */,
 				EE8DA0B72A93F79900C92EF1 /* ChultraSOF.cpp */,
 				EE8DA0B92A93F79900C92EF1 /* Info.plist */,
 			);
 			path = ChultraSOF;
+			sourceTree = "<group>";
+		};
+		EE8DA0BF2A93F86300C92EF1 /* Codecs */ = {
+			isa = PBXGroup;
+			children = (
+				EE8DA0CC2A940A5A00C92EF1 /* Max98357a.cpp */,
+				EE8DA0CD2A940A5A00C92EF1 /* Max98357a.hpp */,
+			);
+			path = Codecs;
+			sourceTree = "<group>";
+		};
+		EE8DA0C02A93F8DB00C92EF1 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				EE8DA0C12A93F8DB00C92EF1 /* libkmod.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		EE8DA0C32A93FC2D00C92EF1 /* Intel */ = {
+			isa = PBXGroup;
+			children = (
+				EE8DA0C42A93FEBA00C92EF1 /* ChultraSofHda.cpp */,
+				EE8DA0C52A93FEBA00C92EF1 /* ChultraSofHda.hpp */,
+				EE8DA0C82A94023900C92EF1 /* ChultraSofCml.cpp */,
+				EE8DA0C92A94023900C92EF1 /* ChultraSofCml.hpp */,
+			);
+			path = Intel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -63,6 +109,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				EE8DA0B62A93F79900C92EF1 /* ChultraSOF.hpp in Headers */,
+				EE8DA0CB2A94023900C92EF1 /* ChultraSofCml.hpp in Headers */,
+				EE8DA0CF2A940A5A00C92EF1 /* Max98357a.hpp in Headers */,
+				EE8DA0C72A93FEBA00C92EF1 /* ChultraSofHda.hpp in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -134,6 +183,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE8DA0C62A93FEBA00C92EF1 /* ChultraSofHda.cpp in Sources */,
+				EE8DA0CE2A940A5A00C92EF1 /* Max98357a.cpp in Sources */,
+				EE8DA0CA2A94023900C92EF1 /* ChultraSofCml.cpp in Sources */,
 				EE8DA0B82A93F79900C92EF1 /* ChultraSOF.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -191,6 +243,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				KERNEL_EXTENSION_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/MacKernelSDK/Headers";
+				KERNEL_FRAMEWORK_HEADERS = "$(PROJECT_DIR)/MacKernelSDK/Headers";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/MacKernelSDK/Library/x86_64";
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -243,6 +298,9 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				KERNEL_EXTENSION_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/MacKernelSDK/Headers";
+				KERNEL_FRAMEWORK_HEADERS = "$(PROJECT_DIR)/MacKernelSDK/Headers";
+				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/MacKernelSDK/Library/x86_64";
 				MACOSX_DEPLOYMENT_TARGET = 13.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
