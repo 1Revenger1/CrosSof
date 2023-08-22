@@ -64,6 +64,7 @@
 		EE8DA0B42A93F79900C92EF1 /* ChultraSOF */ = {
 			isa = PBXGroup;
 			children = (
+				EE8DA0D02A947DCF00C92EF1 /* Firmware */,
 				EE8DA0C32A93FC2D00C92EF1 /* Intel */,
 				EE8DA0BF2A93F86300C92EF1 /* Codecs */,
 				EE8DA0B52A93F79900C92EF1 /* ChultraSOF.hpp */,
@@ -99,6 +100,13 @@
 				EE8DA0C92A94023900C92EF1 /* ChultraSofCml.hpp */,
 			);
 			path = Intel;
+			sourceTree = "<group>";
+		};
+		EE8DA0D02A947DCF00C92EF1 /* Firmware */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Firmware;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
