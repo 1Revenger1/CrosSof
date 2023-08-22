@@ -17,11 +17,47 @@
 OSDefineMetaClassAndStructors(ChultraSofHda, IOService);
 
 ChultraSofHda *ChultraSofHda::probe(IOService *provider, SInt32 *score) {
+    OSObject *topologyResult;
+    
     if (super::probe(provider, score) == nullptr) {
-        IOLog("SOF::Failed to probe");
+        IOLog("SOF::Failed to probe\n");
         return nullptr;
     }
     
+    pci = OSDynamicCast(IOPCIDevice, provider);
+    if (pci == nullptr) {
+        IOLog("SOF::Nub is not PCI device\n");
+        return nullptr;
+    }
+    
+    // Grab memory descriptors here possibly?
+    pci->setIOEnable(true);
+    pci->setBusMasterEnable(true);
+    pci->setMemoryEnable(true);
+    
+    // Grab Topology from
+    OSString *acpiDevPath = OSDynamicCast(OSString, pci->getProperty("acpi-path"));
+    if (acpiDevPath == nullptr) {
+        IOLog("SOF::Failed to grab ACPI Device\n");
+        return nullptr;
+    }
+    
+    IORegistryEntry *acpiEntry = IOService::fromPath(acpiDevPath->getCStringNoCopy());
+    IOACPIPlatformDevice *acpiDev = OSDynamicCast(IOACPIPlatformDevice, acpiEntry);
+    if (acpiDev == nullptr || acpiEntry == nullptr) {
+        OSSafeReleaseNULL(acpiEntry);
+        IOLog("SOF::Failed to grab ACPI Device\n");
+        return nullptr;
+    }
+    
+    IOReturn ret = acpiDev->evaluateObject("_DSD", &topologyResult);
+    if (ret != kIOReturnSuccess) {
+        IOLog("SOF::Failed to grab topology\n");
+        OSSafeReleaseNULL(acpiDev);
+        return nullptr;
+    }
+    
+    OSSafeReleaseNULL(acpiDev);
     return this;
 }
 

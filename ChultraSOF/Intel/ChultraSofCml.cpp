@@ -7,6 +7,7 @@
 
 #include "ChultraSofCml.hpp"
 #include <IOKit/IOLib.h>
+#include <IOKit/pci/IOPCIDevice.h>
 
 #define super ChultraSofHda
 OSDefineMetaClassAndStructors(ChultraSofCml, ChultraSofHda);
