@@ -6,6 +6,7 @@
 //
 
 #include "ChultraSofHda.hpp"
+#include "Logger.h"
 #include <IOKit/IOLib.h>
 #include <IOKit/IOLocks.h>
 #include <libkern/OSKextLib.h>
@@ -39,18 +40,68 @@ static void ChultraSofOnFirmwareCallback(
     IOLockWakeup(ctx->lock, ctx, false);
 }
 
+// PCI devices usually are listed with both IO-APIC interrupts and
+//  MSI interrupts. We just want MSI interrupts, which is usually
+//  at index 1.
+int ChultraSofHda::getMsiInterruptIndex() {
+    for (int i = 0; ; i++) {
+        IOReturn result;
+        int interruptType;
+        
+        result = pci->getInterruptType(i, &interruptType);
+        if (result != kIOReturnSuccess)
+            return -1;
+        
+        if (interruptType & kIOInterruptTypePCIMessaged)
+            return i;
+    }
+}
+
+LIBKERN_RETURNS_RETAINED OSData *ChultraSofHda::getFirmware(const char *firmwareName) {
+    ChultraResourceLoadContext ctx {0};
+    IOReturn ret;
+    
+    ctx.lock = IOLockAlloc();
+    ctx.resource = nullptr;
+    
+    if (ctx.lock == nullptr) {
+        return nullptr;
+    }
+    
+    IOLockLock(ctx.lock);
+    ret = OSKextRequestResource(OSKextGetCurrentIdentifier(), firmwareName, ChultraSofOnFirmwareCallback, &ctx, nullptr);
+    if (ret != kIOReturnSuccess) {
+        IOLog("SOF::Failed to request firmware\n");
+        return nullptr;
+    }
+    
+    ret = IOLockSleep(ctx.lock, &ctx, false);
+    if (ret != kIOReturnSuccess || ctx.resource == nullptr) {
+        IOLog("SOF::Failed to grab firmware\n");
+    }
+    
+    IOLockUnlock(ctx.lock);
+    if (ctx.lock != nullptr) IOLockFree(ctx.lock);
+    return ctx.resource;
+}
+
 ChultraSofHda *ChultraSofHda::probe(IOService *provider, SInt32 *score) {
     OSObject *topologyResult;
-    ChultraResourceLoadContext ctx {0};
+    OSData *firmware = nullptr;
+    IOMemoryMap *dspBar = nullptr;
+    IOMemoryMap *hdaBar = nullptr;
+    int interruptIndex;
+    
+    IOLogInfo("Driver startup!");
     
     if (super::probe(provider, score) == nullptr) {
-        IOLog("SOF::Failed to probe\n");
+        IOLogError("Failed to probe");
         return nullptr;
     }
     
     pci = OSDynamicCast(IOPCIDevice, provider);
     if (pci == nullptr) {
-        IOLog("SOF::Nub is not PCI device\n");
+        IOLogError("Nub is not PCI device");
         return nullptr;
     }
     
@@ -65,7 +116,7 @@ ChultraSofHda *ChultraSofHda::probe(IOService *provider, SInt32 *score) {
     
     OSString *acpiDevPath = OSDynamicCast(OSString, pci->getProperty("acpi-path"));
     if (acpiDevPath == nullptr) {
-        IOLog("SOF::Failed to grab ACPI Device\n");
+        IOLogError("Failed to grab ACPI Device");
         return nullptr;
     }
     
@@ -73,13 +124,13 @@ ChultraSofHda *ChultraSofHda::probe(IOService *provider, SInt32 *score) {
     IOACPIPlatformDevice *acpiDev = OSDynamicCast(IOACPIPlatformDevice, acpiEntry);
     if (acpiDev == nullptr || acpiEntry == nullptr) {
         OSSafeReleaseNULL(acpiEntry);
-        IOLog("SOF::Failed to grab ACPI Device\n");
+        IOLogError("Failed to grab ACPI Device");
         return nullptr;
     }
     
     IOReturn ret = acpiDev->evaluateObject("_DSD", &topologyResult);
     if (ret != kIOReturnSuccess) {
-        IOLog("SOF::Failed to grab topology\n");
+        IOLogError("Failed to grab topology");
         goto err;
     }
     
@@ -87,31 +138,26 @@ ChultraSofHda *ChultraSofHda::probe(IOService *provider, SInt32 *score) {
     // Load Firmware from kext bundle
     //
     
-    ctx.lock = IOLockAlloc();
-    ctx.resource = nullptr;
-    if (ctx.lock == nullptr) {
-        ret = kIOReturnError;
-        goto err;
+    firmware = getFirmware("firmware name");
+    
+    dspBar = pci->mapDeviceMemoryWithRegister(kIOPCIConfigBaseAddress4);
+    hdaBar = pci->mapDeviceMemoryWithRegister(kIOPCIConfigBaseAddress0);
+    
+    if (dspBar != nullptr) {
+        IOLogInfo("DSP Bar Addr: 0x%llx Length: 0x%llx", dspBar->getPhysicalAddress(), dspBar->getSize());
     }
     
-    IOLockLock(ctx.lock);
-    ret = OSKextRequestResource(OSKextGetCurrentIdentifier(), "firmware name", ChultraSofOnFirmwareCallback, &ctx, nullptr);
-    if (ret != kIOReturnSuccess) {
-        IOLog("SOF::Failed to request firmware\n");
-        goto err;
+    if (hdaBar != nullptr) {
+        IOLogInfo("HDA Bar Addr: 0x%llx Length: 0x%llx", hdaBar->getPhysicalAddress(), hdaBar->getSize());
     }
     
-    ret = IOLockSleep(ctx.lock, &ctx, false);
-    if (ret != kIOReturnSuccess || ctx.resource == nullptr) {
-        IOLog("SOF::Failed to grab firmware\n");
-        ret = kIOReturnError;
-        goto err;
-    }
+    interruptIndex = getMsiInterruptIndex();
+    IOLogInfo("Found MSI interrupt index %d", interruptIndex);
     
-    IOLockUnlock(ctx.lock);
 err:
-    if (ctx.lock != nullptr) IOLockFree(ctx.lock);
-    OSSafeReleaseNULL(ctx.resource);
+    OSSafeReleaseNULL(dspBar);
+    OSSafeReleaseNULL(hdaBar);
+    OSSafeReleaseNULL(firmware);
     OSSafeReleaseNULL(acpiDev);
     return ret != kIOReturnSuccess ? nullptr : this;
 }

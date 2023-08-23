@@ -30,6 +30,7 @@
 		EE8DA0C92A94023900C92EF1 /* ChultraSofCml.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ChultraSofCml.hpp; sourceTree = "<group>"; };
 		EE8DA0CC2A940A5A00C92EF1 /* Max98357a.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Max98357a.cpp; sourceTree = "<group>"; };
 		EE8DA0CD2A940A5A00C92EF1 /* Max98357a.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Max98357a.hpp; sourceTree = "<group>"; };
+		EE8DA0D22A95D57900C92EF1 /* Logger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Logger.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +65,7 @@
 		EE8DA0B42A93F79900C92EF1 /* ChultraSOF */ = {
 			isa = PBXGroup;
 			children = (
+				EE8DA0D12A95D53C00C92EF1 /* Includes */,
 				EE8DA0D02A947DCF00C92EF1 /* Firmware */,
 				EE8DA0C32A93FC2D00C92EF1 /* Intel */,
 				EE8DA0BF2A93F86300C92EF1 /* Codecs */,
@@ -107,6 +109,14 @@
 			children = (
 			);
 			path = Firmware;
+			sourceTree = "<group>";
+		};
+		EE8DA0D12A95D53C00C92EF1 /* Includes */ = {
+			isa = PBXGroup;
+			children = (
+				EE8DA0D22A95D57900C92EF1 /* Logger.h */,
+			);
+			path = Includes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

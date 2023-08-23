@@ -18,6 +18,8 @@ class ChultraSofHda : public IOService {
     bool start(IOService *provider) override;
     ChultraSofHda *probe(IOService *provider, SInt32 *score) override;
     
+    int getMsiInterruptIndex();
+    OSData *getFirmware(const char *firmwareName);
 protected:
     IOPCIDevice *pci {nullptr};
 };
