@@ -31,6 +31,11 @@ enum hda_bars_t {
     SOF_MAX_BAR
 };
 
+struct SOFMailbox {
+    uint32_t offset;
+    size_t size;
+};
+
 class ChultraSofHda : public IOService {
     OSDeclareDefaultStructors(ChultraSofHda);
   
@@ -59,6 +64,10 @@ protected:
     IOFilterInterruptEventSource *intSrc {nullptr};
     IOCommandGate *cmdGate {nullptr};
 
+    SOFMailbox dspMailbox;
+    SOFMailbox hostMailbox;
+    SOFMailbox fwMailbox;
+    
 private:
     IOReturn ctrlGetCaps();
     IOReturn getHdaStreams();

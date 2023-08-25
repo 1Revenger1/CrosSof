@@ -184,6 +184,22 @@ bool ChultraSofHda::start(IOService *provider) {
         return false;
     }
     
+    // Reset HDA playback
+    uint32_t tcsel = pci->configRead32(0x44);
+    tcsel &= ~0x07;
+    pci->configWrite32(0x44, tcsel);
+    
+    if (true /* dsp_mode_selected */) {
+        uint32_t ppctl = read32(SOF_PP_BAR, 0x04);
+        ppctl |= (1 << 31) | (1 << 30); // Interrupt Enable | PP Enable
+        write32(SOF_PP_BAR, 0x04, ppctl);
+        
+        // Default mailbox offset for FW ready messages
+        dspMailbox.offset = 0x81000;
+    }
+    
+    // TODO: Is NHLT acpi table required?
+    
     registerService();
     return super::start(provider);
 }
