@@ -88,7 +88,7 @@ LIBKERN_RETURNS_RETAINED OSData *ChultraSofHda::getFirmware(const char *firmware
 
 bool ChultraSofHda::init() {
     bzero(barMaps, sizeof(barMaps));
-    return true;
+    return super::init();
 }
 
 ChultraSofHda *ChultraSofHda::probe(IOService *provider, SInt32 *score) {
@@ -148,10 +148,12 @@ ChultraSofHda *ChultraSofHda::probe(IOService *provider, SInt32 *score) {
     
     if (barMaps[SOF_DSP_BAR] != nullptr) {
         IOLogInfo("DSP Bar Addr: 0x%llx Length: 0x%llx", barMaps[SOF_DSP_BAR]->getPhysicalAddress(), barMaps[SOF_DSP_BAR]->getSize());
+        bars[SOF_DSP_BAR] = barMaps[SOF_DSP_BAR]->getVirtualAddress();
     }
     
     if (barMaps[SOF_HDA_BAR] != nullptr) {
         IOLogInfo("HDA Bar Addr: 0x%llx Length: 0x%llx", barMaps[SOF_HDA_BAR]->getPhysicalAddress(), barMaps[SOF_HDA_BAR]->getSize());
+        bars[SOF_HDA_BAR] = barMaps[SOF_HDA_BAR]->getVirtualAddress();
     }
     
     ctrlGetCaps();
