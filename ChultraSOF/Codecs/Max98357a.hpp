@@ -8,10 +8,12 @@
 #ifndef Max98357a_hpp
 #define Max98357a_hpp
 
-#include <IOKit/audio/IOAudioDevice.h>
+#include "SofDai.hpp"
 
-class Max98357a : public IOAudioDevice {
+class Max98357a : public SofDai {
     OSDeclareDefaultStructors(Max98357a);
+public:
+    DaiDriver *getDaiStreams(UInt32 *count) const override;
 };
 
 #endif /* Max98357a_hpp */

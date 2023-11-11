@@ -7,27 +7,48 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		EE8DA0B62A93F79900C92EF1 /* ChultraSOF.hpp in Headers */ = {isa = PBXBuildFile; fileRef = EE8DA0B52A93F79900C92EF1 /* ChultraSOF.hpp */; };
-		EE8DA0B82A93F79900C92EF1 /* ChultraSOF.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE8DA0B72A93F79900C92EF1 /* ChultraSOF.cpp */; };
+		EE43B3392AFF22AC000F7AD3 /* SofOps.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE43B3382AFF22AC000F7AD3 /* SofOps.cpp */; };
+		EE43B33D2AFF26D3000F7AD3 /* IntelHdaDspLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE43B33C2AFF26D3000F7AD3 /* IntelHdaDspLoader.cpp */; };
+		EE43B3432AFF2B15000F7AD3 /* IntelHdaDspCtrl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE43B3422AFF2B15000F7AD3 /* IntelHdaDspCtrl.cpp */; };
+		EE6CF0222AF6CC5000915FA3 /* IntelHdaStreamEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE6CF0202AF6CC5000915FA3 /* IntelHdaStreamEngine.cpp */; };
+		EE6CF0232AF6CC5000915FA3 /* IntelHdaStreamEngine.hpp in Headers */ = {isa = PBXBuildFile; fileRef = EE6CF0212AF6CC5000915FA3 /* IntelHdaStreamEngine.hpp */; };
+		EE6CF02C2AF6D5D900915FA3 /* SofDai.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE6CF02A2AF6D5D900915FA3 /* SofDai.cpp */; };
+		EE6CF02D2AF6D5D900915FA3 /* SofDai.hpp in Headers */ = {isa = PBXBuildFile; fileRef = EE6CF02B2AF6D5D900915FA3 /* SofDai.hpp */; };
+		EE8DA0B62A93F79900C92EF1 /* SofDsp.hpp in Headers */ = {isa = PBXBuildFile; fileRef = EE8DA0B52A93F79900C92EF1 /* SofDsp.hpp */; };
+		EE8DA0B82A93F79900C92EF1 /* SofDsp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE8DA0B72A93F79900C92EF1 /* SofDsp.cpp */; };
 		EE8DA0C22A93F8DB00C92EF1 /* libkmod.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EE8DA0C12A93F8DB00C92EF1 /* libkmod.a */; };
-		EE8DA0C62A93FEBA00C92EF1 /* ChultraSofHda.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE8DA0C42A93FEBA00C92EF1 /* ChultraSofHda.cpp */; };
-		EE8DA0C72A93FEBA00C92EF1 /* ChultraSofHda.hpp in Headers */ = {isa = PBXBuildFile; fileRef = EE8DA0C52A93FEBA00C92EF1 /* ChultraSofHda.hpp */; };
-		EE8DA0CA2A94023900C92EF1 /* ChultraSofCml.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE8DA0C82A94023900C92EF1 /* ChultraSofCml.cpp */; };
-		EE8DA0CB2A94023900C92EF1 /* ChultraSofCml.hpp in Headers */ = {isa = PBXBuildFile; fileRef = EE8DA0C92A94023900C92EF1 /* ChultraSofCml.hpp */; };
+		EE8DA0C62A93FEBA00C92EF1 /* IntelHdaDsp.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE8DA0C42A93FEBA00C92EF1 /* IntelHdaDsp.cpp */; };
+		EE8DA0C72A93FEBA00C92EF1 /* IntelHdaDsp.hpp in Headers */ = {isa = PBXBuildFile; fileRef = EE8DA0C52A93FEBA00C92EF1 /* IntelHdaDsp.hpp */; };
+		EE8DA0CA2A94023900C92EF1 /* IntelHdaDspCnl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE8DA0C82A94023900C92EF1 /* IntelHdaDspCnl.cpp */; };
+		EE8DA0CB2A94023900C92EF1 /* IntelHdaDspCnl.hpp in Headers */ = {isa = PBXBuildFile; fileRef = EE8DA0C92A94023900C92EF1 /* IntelHdaDspCnl.hpp */; };
 		EE8DA0CE2A940A5A00C92EF1 /* Max98357a.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE8DA0CC2A940A5A00C92EF1 /* Max98357a.cpp */; };
 		EE8DA0CF2A940A5A00C92EF1 /* Max98357a.hpp in Headers */ = {isa = PBXBuildFile; fileRef = EE8DA0CD2A940A5A00C92EF1 /* Max98357a.hpp */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		EE43B3382AFF22AC000F7AD3 /* SofOps.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SofOps.cpp; sourceTree = "<group>"; };
+		EE43B33C2AFF26D3000F7AD3 /* IntelHdaDspLoader.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = IntelHdaDspLoader.cpp; sourceTree = "<group>"; };
+		EE43B33F2AFF291C000F7AD3 /* bitutil.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = bitutil.h; sourceTree = "<group>"; };
+		EE43B3402AFF296B000F7AD3 /* hda.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hda.h; sourceTree = "<group>"; };
+		EE43B3422AFF2B15000F7AD3 /* IntelHdaDspCtrl.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = IntelHdaDspCtrl.cpp; sourceTree = "<group>"; };
+		EE43B3472AFF4C21000F7AD3 /* shim.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = shim.h; sourceTree = "<group>"; };
+		EE43B3492AFF4CA1000F7AD3 /* sdw_intel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sdw_intel.h; sourceTree = "<group>"; };
+		EE43B34E2AFF4E1E000F7AD3 /* sof.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sof.h; sourceTree = "<group>"; };
+		EE6CF0202AF6CC5000915FA3 /* IntelHdaStreamEngine.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = IntelHdaStreamEngine.cpp; sourceTree = "<group>"; };
+		EE6CF0212AF6CC5000915FA3 /* IntelHdaStreamEngine.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = IntelHdaStreamEngine.hpp; sourceTree = "<group>"; };
+		EE6CF0282AF6D4B900915FA3 /* pcm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pcm.h; sourceTree = "<group>"; };
+		EE6CF02A2AF6D5D900915FA3 /* SofDai.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SofDai.cpp; sourceTree = "<group>"; };
+		EE6CF02B2AF6D5D900915FA3 /* SofDai.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SofDai.hpp; sourceTree = "<group>"; };
+		EE6CF0322AF6DBB900915FA3 /* dai.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = dai.h; sourceTree = "<group>"; };
 		EE8DA0B22A93F79900C92EF1 /* ChultraSOF.kext */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ChultraSOF.kext; sourceTree = BUILT_PRODUCTS_DIR; };
-		EE8DA0B52A93F79900C92EF1 /* ChultraSOF.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ChultraSOF.hpp; sourceTree = "<group>"; };
-		EE8DA0B72A93F79900C92EF1 /* ChultraSOF.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ChultraSOF.cpp; sourceTree = "<group>"; };
+		EE8DA0B52A93F79900C92EF1 /* SofDsp.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = SofDsp.hpp; sourceTree = "<group>"; };
+		EE8DA0B72A93F79900C92EF1 /* SofDsp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = SofDsp.cpp; sourceTree = "<group>"; };
 		EE8DA0B92A93F79900C92EF1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		EE8DA0C12A93F8DB00C92EF1 /* libkmod.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libkmod.a; path = usr/lib/libkmod.a; sourceTree = SDKROOT; };
-		EE8DA0C42A93FEBA00C92EF1 /* ChultraSofHda.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ChultraSofHda.cpp; sourceTree = "<group>"; };
-		EE8DA0C52A93FEBA00C92EF1 /* ChultraSofHda.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ChultraSofHda.hpp; sourceTree = "<group>"; };
-		EE8DA0C82A94023900C92EF1 /* ChultraSofCml.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = ChultraSofCml.cpp; sourceTree = "<group>"; };
-		EE8DA0C92A94023900C92EF1 /* ChultraSofCml.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = ChultraSofCml.hpp; sourceTree = "<group>"; };
+		EE8DA0C42A93FEBA00C92EF1 /* IntelHdaDsp.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = IntelHdaDsp.cpp; sourceTree = "<group>"; };
+		EE8DA0C52A93FEBA00C92EF1 /* IntelHdaDsp.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = IntelHdaDsp.hpp; sourceTree = "<group>"; };
+		EE8DA0C82A94023900C92EF1 /* IntelHdaDspCnl.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = IntelHdaDspCnl.cpp; sourceTree = "<group>"; };
+		EE8DA0C92A94023900C92EF1 /* IntelHdaDspCnl.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = IntelHdaDspCnl.hpp; sourceTree = "<group>"; };
 		EE8DA0CC2A940A5A00C92EF1 /* Max98357a.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = Max98357a.cpp; sourceTree = "<group>"; };
 		EE8DA0CD2A940A5A00C92EF1 /* Max98357a.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = Max98357a.hpp; sourceTree = "<group>"; };
 		EE8DA0D22A95D57900C92EF1 /* Logger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Logger.h; sourceTree = "<group>"; };
@@ -45,6 +66,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		EE43B34A2AFF4CF8000F7AD3 /* Soundwire */ = {
+			isa = PBXGroup;
+			children = (
+				EE43B3492AFF4CA1000F7AD3 /* sdw_intel.h */,
+			);
+			path = Soundwire;
+			sourceTree = "<group>";
+		};
+		EE43B34B2AFF4D02000F7AD3 /* Sound */ = {
+			isa = PBXGroup;
+			children = (
+				EE6CF0282AF6D4B900915FA3 /* pcm.h */,
+			);
+			path = Sound;
+			sourceTree = "<group>";
+		};
+		EE43B34C2AFF4D1A000F7AD3 /* SOF */ = {
+			isa = PBXGroup;
+			children = (
+				EE6CF0322AF6DBB900915FA3 /* dai.h */,
+				EE43B3402AFF296B000F7AD3 /* hda.h */,
+				EE43B3472AFF4C21000F7AD3 /* shim.h */,
+				EE43B34E2AFF4E1E000F7AD3 /* sof.h */,
+			);
+			path = SOF;
+			sourceTree = "<group>";
+		};
 		EE8DA0A82A93F79900C92EF1 = {
 			isa = PBXGroup;
 			children = (
@@ -69,9 +117,12 @@
 				EE8DA0D02A947DCF00C92EF1 /* Firmware */,
 				EE8DA0C32A93FC2D00C92EF1 /* Intel */,
 				EE8DA0BF2A93F86300C92EF1 /* Codecs */,
-				EE8DA0B52A93F79900C92EF1 /* ChultraSOF.hpp */,
-				EE8DA0B72A93F79900C92EF1 /* ChultraSOF.cpp */,
+				EE8DA0B52A93F79900C92EF1 /* SofDsp.hpp */,
+				EE8DA0B72A93F79900C92EF1 /* SofDsp.cpp */,
+				EE43B3382AFF22AC000F7AD3 /* SofOps.cpp */,
 				EE8DA0B92A93F79900C92EF1 /* Info.plist */,
+				EE6CF02A2AF6D5D900915FA3 /* SofDai.cpp */,
+				EE6CF02B2AF6D5D900915FA3 /* SofDai.hpp */,
 			);
 			path = ChultraSOF;
 			sourceTree = "<group>";
@@ -96,10 +147,14 @@
 		EE8DA0C32A93FC2D00C92EF1 /* Intel */ = {
 			isa = PBXGroup;
 			children = (
-				EE8DA0C42A93FEBA00C92EF1 /* ChultraSofHda.cpp */,
-				EE8DA0C52A93FEBA00C92EF1 /* ChultraSofHda.hpp */,
-				EE8DA0C82A94023900C92EF1 /* ChultraSofCml.cpp */,
-				EE8DA0C92A94023900C92EF1 /* ChultraSofCml.hpp */,
+				EE8DA0C42A93FEBA00C92EF1 /* IntelHdaDsp.cpp */,
+				EE8DA0C52A93FEBA00C92EF1 /* IntelHdaDsp.hpp */,
+				EE8DA0C82A94023900C92EF1 /* IntelHdaDspCnl.cpp */,
+				EE8DA0C92A94023900C92EF1 /* IntelHdaDspCnl.hpp */,
+				EE6CF0202AF6CC5000915FA3 /* IntelHdaStreamEngine.cpp */,
+				EE6CF0212AF6CC5000915FA3 /* IntelHdaStreamEngine.hpp */,
+				EE43B33C2AFF26D3000F7AD3 /* IntelHdaDspLoader.cpp */,
+				EE43B3422AFF2B15000F7AD3 /* IntelHdaDspCtrl.cpp */,
 			);
 			path = Intel;
 			sourceTree = "<group>";
@@ -114,7 +169,11 @@
 		EE8DA0D12A95D53C00C92EF1 /* Includes */ = {
 			isa = PBXGroup;
 			children = (
+				EE43B34C2AFF4D1A000F7AD3 /* SOF */,
+				EE43B34B2AFF4D02000F7AD3 /* Sound */,
+				EE43B34A2AFF4CF8000F7AD3 /* Soundwire */,
 				EE8DA0D22A95D57900C92EF1 /* Logger.h */,
+				EE43B33F2AFF291C000F7AD3 /* bitutil.h */,
 			);
 			path = Includes;
 			sourceTree = "<group>";
@@ -126,10 +185,12 @@
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE8DA0B62A93F79900C92EF1 /* ChultraSOF.hpp in Headers */,
-				EE8DA0CB2A94023900C92EF1 /* ChultraSofCml.hpp in Headers */,
+				EE6CF02D2AF6D5D900915FA3 /* SofDai.hpp in Headers */,
+				EE6CF0232AF6CC5000915FA3 /* IntelHdaStreamEngine.hpp in Headers */,
+				EE8DA0B62A93F79900C92EF1 /* SofDsp.hpp in Headers */,
+				EE8DA0CB2A94023900C92EF1 /* IntelHdaDspCnl.hpp in Headers */,
 				EE8DA0CF2A940A5A00C92EF1 /* Max98357a.hpp in Headers */,
-				EE8DA0C72A93FEBA00C92EF1 /* ChultraSofHda.hpp in Headers */,
+				EE8DA0C72A93FEBA00C92EF1 /* IntelHdaDsp.hpp in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -225,10 +286,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EE8DA0C62A93FEBA00C92EF1 /* ChultraSofHda.cpp in Sources */,
+				EE43B3392AFF22AC000F7AD3 /* SofOps.cpp in Sources */,
+				EE6CF0222AF6CC5000915FA3 /* IntelHdaStreamEngine.cpp in Sources */,
+				EE8DA0C62A93FEBA00C92EF1 /* IntelHdaDsp.cpp in Sources */,
 				EE8DA0CE2A940A5A00C92EF1 /* Max98357a.cpp in Sources */,
-				EE8DA0CA2A94023900C92EF1 /* ChultraSofCml.cpp in Sources */,
-				EE8DA0B82A93F79900C92EF1 /* ChultraSOF.cpp in Sources */,
+				EE8DA0CA2A94023900C92EF1 /* IntelHdaDspCnl.cpp in Sources */,
+				EE43B3432AFF2B15000F7AD3 /* IntelHdaDspCtrl.cpp in Sources */,
+				EE43B33D2AFF26D3000F7AD3 /* IntelHdaDspLoader.cpp in Sources */,
+				EE8DA0B82A93F79900C92EF1 /* SofDsp.cpp in Sources */,
+				EE6CF02C2AF6D5D900915FA3 /* SofDai.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -289,7 +355,7 @@
 				KERNEL_EXTENSION_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/MacKernelSDK/Headers";
 				KERNEL_FRAMEWORK_HEADERS = "$(PROJECT_DIR)/MacKernelSDK/Headers";
 				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/MacKernelSDK/Library/x86_64";
-				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -345,7 +411,7 @@
 				KERNEL_EXTENSION_HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/MacKernelSDK/Headers";
 				KERNEL_FRAMEWORK_HEADERS = "$(PROJECT_DIR)/MacKernelSDK/Headers";
 				LIBRARY_SEARCH_PATHS = "$(PROJECT_DIR)/MacKernelSDK/Library/x86_64";
-				MACOSX_DEPLOYMENT_TARGET = 13.3;
+				MACOSX_DEPLOYMENT_TARGET = 10.15;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -362,7 +428,6 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ChultraSOF/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				MACOSX_DEPLOYMENT_TARGET = 13.3;
 				MARKETING_VERSION = "${MODULE_VERSION}";
 				MODULE_NAME = com.1Revenger1.ChultraSOF;
 				MODULE_VERSION = 0.0.1;
@@ -383,7 +448,6 @@
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = ChultraSOF/Info.plist;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				MACOSX_DEPLOYMENT_TARGET = 13.3;
 				MARKETING_VERSION = "${MODULE_VERSION}";
 				MODULE_NAME = com.1Revenger1.ChultraSOF;
 				MODULE_VERSION = 0.0.1;

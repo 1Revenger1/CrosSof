@@ -5,14 +5,14 @@
 //  Created by Gwydien on 8/21/23.
 //
 
-#include "ChultraSofCml.hpp"
+#include "IntelHdaDspCml.hpp"
 #include <IOKit/IOLib.h>
 #include <IOKit/pci/IOPCIDevice.h>
 
-#define super ChultraSofHda
-OSDefineMetaClassAndStructors(ChultraSofCml, ChultraSofHda);
+#define super IntelHdaDsp
+OSDefineMetaClassAndStructors(IntelHdaDspCml, IntelHdaDsp);
 
-ChultraSofCml *ChultraSofCml::probe(IOService *provider, SInt32 *score) {
+IntelHdaDspCml *IntelHdaDspCml::probe(IOService *provider, SInt32 *score) {
     if (super::probe(provider, score) == nullptr) {
         IOLog("SOF::Failed to probe");
         return nullptr;
@@ -21,6 +21,6 @@ ChultraSofCml *ChultraSofCml::probe(IOService *provider, SInt32 *score) {
     return this;
 }
 
-bool ChultraSofCml::start(IOService *provider) {
+bool IntelHdaDspCml::start(IOService *provider) {
     return super::start(provider);
 }

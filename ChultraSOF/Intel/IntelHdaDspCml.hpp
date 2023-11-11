@@ -9,13 +9,13 @@
 #define ChultraSofCml_hpp
 
 #include <IOKit/IOService.h>
-#include <ChultraSofHda.hpp>
+#include <IntelHdaDsp.hpp>
 
-class ChultraSofCml : public ChultraSofHda {
-    OSDeclareDefaultStructors(ChultraSofCml);
+class IntelHdaDspCnl : public IntelHdaDsp {
+    OSDeclareDefaultStructors(IntelHdaDspCnl);
   
     bool start(IOService *provider) override;
-    ChultraSofCml *probe(IOService *provider, SInt32 *score) override;
+    IntelHdaDspCnl *probe(IOService *provider, SInt32 *score) override;
 };
 
 #endif /* ChultraSofCml_hpp */
