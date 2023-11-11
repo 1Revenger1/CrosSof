@@ -66,6 +66,8 @@ protected:
     SOFMailbox hostMailbox;
     SOFMailbox fwMailbox;
     
+    size_t streamCount {0};
+    
     IOMemoryMap *barMaps[HDA_DSP_MAX_BAR] {};
     IOVirtualAddress bars[HDA_DSP_MAX_BAR] {};
 private:

@@ -46,9 +46,14 @@ protected:
     
 private:
     IOReturn getHdaStreams();
+    void freeStreams();
     
-    OSArray *streamEngines;
+    OSArray *streamEngines {nullptr};
+    OSArray *streams {nullptr};
     bool l1Disabled {false};
+    
+    IOBufferMemoryDescriptor *posbuf {nullptr};
+    IOBufferMemoryDescriptor *corb {nullptr};
 };
 
 

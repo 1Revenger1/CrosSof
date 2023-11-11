@@ -10,6 +10,7 @@
 		EE43B3392AFF22AC000F7AD3 /* SofOps.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE43B3382AFF22AC000F7AD3 /* SofOps.cpp */; };
 		EE43B33D2AFF26D3000F7AD3 /* IntelHdaDspLoader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE43B33C2AFF26D3000F7AD3 /* IntelHdaDspLoader.cpp */; };
 		EE43B3432AFF2B15000F7AD3 /* IntelHdaDspCtrl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE43B3422AFF2B15000F7AD3 /* IntelHdaDspCtrl.cpp */; };
+		EE43B3512AFF53BF000F7AD3 /* IntelHdaDspStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE43B3502AFF53BF000F7AD3 /* IntelHdaDspStream.cpp */; };
 		EE6CF0222AF6CC5000915FA3 /* IntelHdaStreamEngine.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE6CF0202AF6CC5000915FA3 /* IntelHdaStreamEngine.cpp */; };
 		EE6CF0232AF6CC5000915FA3 /* IntelHdaStreamEngine.hpp in Headers */ = {isa = PBXBuildFile; fileRef = EE6CF0212AF6CC5000915FA3 /* IntelHdaStreamEngine.hpp */; };
 		EE6CF02C2AF6D5D900915FA3 /* SofDai.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EE6CF02A2AF6D5D900915FA3 /* SofDai.cpp */; };
@@ -34,6 +35,9 @@
 		EE43B3472AFF4C21000F7AD3 /* shim.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = shim.h; sourceTree = "<group>"; };
 		EE43B3492AFF4CA1000F7AD3 /* sdw_intel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sdw_intel.h; sourceTree = "<group>"; };
 		EE43B34E2AFF4E1E000F7AD3 /* sof.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = sof.h; sourceTree = "<group>"; };
+		EE43B3502AFF53BF000F7AD3 /* IntelHdaDspStream.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = IntelHdaDspStream.cpp; sourceTree = "<group>"; };
+		EE43B3532AFF5830000F7AD3 /* hdaudio_ext.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hdaudio_ext.h; sourceTree = "<group>"; };
+		EE43B3552AFF58DB000F7AD3 /* hdaudio.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = hdaudio.h; sourceTree = "<group>"; };
 		EE6CF0202AF6CC5000915FA3 /* IntelHdaStreamEngine.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = IntelHdaStreamEngine.cpp; sourceTree = "<group>"; };
 		EE6CF0212AF6CC5000915FA3 /* IntelHdaStreamEngine.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = IntelHdaStreamEngine.hpp; sourceTree = "<group>"; };
 		EE6CF0282AF6D4B900915FA3 /* pcm.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = pcm.h; sourceTree = "<group>"; };
@@ -78,6 +82,8 @@
 			isa = PBXGroup;
 			children = (
 				EE6CF0282AF6D4B900915FA3 /* pcm.h */,
+				EE43B3532AFF5830000F7AD3 /* hdaudio_ext.h */,
+				EE43B3552AFF58DB000F7AD3 /* hdaudio.h */,
 			);
 			path = Sound;
 			sourceTree = "<group>";
@@ -155,6 +161,7 @@
 				EE6CF0212AF6CC5000915FA3 /* IntelHdaStreamEngine.hpp */,
 				EE43B33C2AFF26D3000F7AD3 /* IntelHdaDspLoader.cpp */,
 				EE43B3422AFF2B15000F7AD3 /* IntelHdaDspCtrl.cpp */,
+				EE43B3502AFF53BF000F7AD3 /* IntelHdaDspStream.cpp */,
 			);
 			path = Intel;
 			sourceTree = "<group>";
@@ -288,6 +295,7 @@
 			files = (
 				EE43B3392AFF22AC000F7AD3 /* SofOps.cpp in Sources */,
 				EE6CF0222AF6CC5000915FA3 /* IntelHdaStreamEngine.cpp in Sources */,
+				EE43B3512AFF53BF000F7AD3 /* IntelHdaDspStream.cpp in Sources */,
 				EE8DA0C62A93FEBA00C92EF1 /* IntelHdaDsp.cpp in Sources */,
 				EE8DA0CE2A940A5A00C92EF1 /* Max98357a.cpp in Sources */,
 				EE8DA0CA2A94023900C92EF1 /* IntelHdaDspCnl.cpp in Sources */,

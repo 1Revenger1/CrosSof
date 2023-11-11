@@ -22,6 +22,8 @@
 #define super SofDsp
 OSDefineMetaClassAndAbstractStructors(IntelHdaDsp, SofDsp);
 
+OSDefineMetaClassAndStructors(SOFIntelHdaStream, OSObject);
+
 // PCI devices usually are listed with both IO-APIC interrupts and
 //  MSI interrupts. We just want MSI interrupts, which is usually
 //  at index 1.
@@ -191,6 +193,8 @@ bool IntelHdaDsp::sofProbe(IOService *provider) {
 }
 
 void IntelHdaDsp::free() {
+    freeStreams();
+    
     if (workloop != nullptr && intSrc != nullptr) {
         workloop->removeEventSource(intSrc);
         OSSafeReleaseNULL(intSrc);
@@ -212,22 +216,4 @@ void IntelHdaDsp::free() {
     }
     
     super::free();
-}
-
-IOReturn IntelHdaDsp::getHdaStreams() {
-    uint32_t streamCaps = read32(HDA_DSP_HDA_BAR, 0x0);
-    
-    int captureStreams = (streamCaps >> 8) & 0x0F;
-    int playbackStreams = (streamCaps>>12) & 0x0F;
-//    int totalStream = captureStreams + playbackStreams;
-    IOLogInfo("Found %d playback and %d capture streams", playbackStreams, captureStreams);
-    
-//    IOBufferMemoryDescriptor *posBuffer = IOBufferMemoryDescriptor::inTaskWithPhysicalMask(kernel_task,
-//                                                                                           kIOMemoryPhysicallyContiguous | kIODirectionInOut | kIOMapInhibitCache,
-//                                                                                           8 * totalStream,
-//                                                                                           0);
-//    
-    // TODO: Actually parse/create streams
-    
-    return kIOReturnSuccess;
 }

@@ -10,7 +10,11 @@
 
 #pragma once
 
+#include <libkern/c++/OSObject.h>
+
 #include "bitutil.h"
+#include "hdaudio_ext.h"
+#include "shim.h"
 
 /* PCI registers */
 #define PCI_TCSEL                   0x44
@@ -481,3 +485,15 @@ enum sof_hda_D0_substate {
     SOF_HDA_DSP_PM_D0I3,    /* low power D0 substate */
 };
 
+#define SOF_STREAM_SD_OFFSET(s) \
+    (SOF_HDA_ADSP_SD_ENTRY_SIZE * ((s)->index) \
+     + SOF_HDA_ADSP_LOADER_BASE)
+
+class SOFIntelHdaStream : public OSObject {
+    OSDeclareDefaultStructors(SOFIntelHdaStream);
+public:
+    struct hdac_ext_stream hext_stream;
+    struct sof_intel_stream sof_intel_stream;
+    int host_reserved; /* reserve host DMA channel */
+    UInt32 flags;
+};
